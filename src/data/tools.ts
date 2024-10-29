@@ -1,11 +1,11 @@
 import { Tool } from '../types';
-import { QrCode, Users, AlertCircle } from 'lucide-react';
+import { QrCode, Users, AlertCircle, BarChart } from 'lucide-react';
 
 export const tools: Tool[] = [
   {
     id: '1',
     name: 'QR Code Generator',
-    description: 'Generate custom QR codes for your business needs',
+    description: 'Generate custom QR codes for your clients',
     url: 'https://nimble-twilight-9517d1.netlify.app/',
     icon: 'QrCode'
   },
@@ -23,6 +23,14 @@ export const tools: Tool[] = [
     description: 'Audit and resolve synchronization errors',
     url: 'https://meek-stroopwafel-46fcfe.netlify.app/',
     icon: 'AlertCircle',
+    featured: true
+  },
+  {
+    id: '4',
+    name: 'SLX™ Campaign Member Manager',
+    description: 'Efficiently manage and track campaign members',
+    url: 'https://phenomenal-douhua-468c53.netlify.app/',
+    icon: 'BarChart',
     featured: true
   }
 ];

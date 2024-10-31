@@ -13,7 +13,7 @@ export const tools: Tool[] = [
     id: '2',
     name: 'Duplicate Prospect Analyzer',
     description: 'Identify and manage duplicate prospects efficiently',
-    url: 'https://preeminent-kheer-315189.netlify.app/',
+    url: 'https://super-souffle-b68dd7.netlify.app/',
     icon: 'Users',
     featured: true
   },

@@ -6,8 +6,9 @@ export const tools: Tool[] = [
     id: '1',
     name: 'QR Code Generator',
     description: 'Generate custom QR codes for your clients',
-    url: 'https://nimble-twilight-9517d1.netlify.app/',
-    icon: 'QrCode'
+    url: 'https://spiffy-profiterole-6e2e54.netlify.app/',
+    icon: 'QrCode',
+    recentlyUpdated: true
   },
   {
     id: '2',

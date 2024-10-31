@@ -5,6 +5,7 @@ export interface Tool {
   url: string;
   icon: string;
   featured?: boolean;
+  recentlyUpdated?: boolean;
 }
 
 export type TimeOfDay = 'morning' | 'afternoon' | 'evening';

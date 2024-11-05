@@ -1,5 +1,5 @@
 import { Tool } from '../types';
-import { QrCode, Users, AlertCircle, BarChart } from 'lucide-react';
+import { QrCode, Users, AlertCircle, BarChart, Map } from 'lucide-react';
 
 export const tools: Tool[] = [
   {
@@ -33,5 +33,14 @@ export const tools: Tool[] = [
     url: 'https://phenomenal-douhua-468c53.netlify.app/',
     icon: 'BarChart',
     featured: true
+  },
+  {
+    id: '5',
+    name: 'Journey Hub',
+    description: 'Design and visualize customer journeys with ease',
+    url: 'https://iridescent-cannoli-95802f.netlify.app/',
+    icon: 'Map',
+    featured: true,
+    recentlyUpdated: true
   }
 ];

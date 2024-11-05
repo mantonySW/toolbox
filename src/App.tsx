@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { ToolGrid } from './components/ToolGrid';
+import { AuthScreen } from './components/AuthScreen';
 import { tools } from './data/tools';
 import { ArrowLeft } from 'lucide-react';
 
-function App() {
+export const App: React.FC = () => {
   const [selectedToolUrl, setSelectedToolUrl] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authError, setAuthError] = useState<string>();
 
   const handleToolSelect = (url: string) => {
     setIsTransitioning(true);
@@ -19,6 +22,19 @@ function App() {
       setSelectedToolUrl(null);
     }, 300);
   };
+
+  const handleAuthenticate = (password: string) => {
+    if (password === 'IRHCQKLGUrNnx2O') {
+      setIsAuthenticated(true);
+      setAuthError(undefined);
+    } else {
+      setAuthError('Incorrect password. Please try again.');
+    }
+  };
+
+  if (!isAuthenticated) {
+    return <AuthScreen onAuthenticate={handleAuthenticate} error={authError} />;
+  }
 
   if (selectedToolUrl) {
     return (
@@ -52,6 +68,6 @@ function App() {
       </main>
     </div>
   );
-}
+};
 
 export default App;

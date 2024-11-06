@@ -4,6 +4,7 @@ export interface Tool {
   description: string;
   url: string;
   icon: string;
+  path: string;
   featured?: boolean;
   recentlyUpdated?: boolean;
 }

@@ -1,18 +1,23 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ToolCard } from './ToolCard';
 import { Tool } from '../types';
 
 interface ToolGridProps {
   tools: Tool[];
-  onToolSelect: (url: string) => void;
 }
 
-export const ToolGrid: React.FC<ToolGridProps> = ({ tools, onToolSelect }) => {
+export const ToolGrid: React.FC<ToolGridProps> = ({ tools }) => {
+  const navigate = useNavigate();
   const featuredTools = tools.filter(tool => tool.featured);
   const regularTools = tools.map(tool => ({
     ...tool,
     featured: false // Remove featured tag in All Tools section
   }));
+
+  const handleToolSelect = (path: string) => {
+    navigate(`/${path}`);
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -26,7 +31,7 @@ export const ToolGrid: React.FC<ToolGridProps> = ({ tools, onToolSelect }) => {
                 className="opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <ToolCard tool={tool} onClick={onToolSelect} />
+                <ToolCard tool={tool} onClick={() => handleToolSelect(tool.path)} />
               </div>
             ))}
           </div>
@@ -41,7 +46,7 @@ export const ToolGrid: React.FC<ToolGridProps> = ({ tools, onToolSelect }) => {
             className="opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            <ToolCard tool={tool} onClick={onToolSelect} />
+            <ToolCard tool={tool} onClick={() => handleToolSelect(tool.path)} />
           </div>
         ))}
       </div>

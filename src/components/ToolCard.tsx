@@ -4,7 +4,7 @@ import * as Icons from 'lucide-react';
 
 interface ToolCardProps {
   tool: Tool;
-  onClick: (url: string) => void;
+  onClick: () => void;
 }
 
 export const ToolCard: React.FC<ToolCardProps> = ({ tool, onClick }) => {
@@ -12,7 +12,7 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool, onClick }) => {
 
   return (
     <div 
-      onClick={() => onClick(tool.url)}
+      onClick={onClick}
       className="bg-white rounded-xl shadow-lg p-6 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl will-change-transform"
     >
       <div className="flex items-center mb-4">

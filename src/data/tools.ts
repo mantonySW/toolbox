@@ -8,6 +8,7 @@ export const tools: Tool[] = [
     description: 'Generate custom QR codes for your clients',
     url: 'https://spiffy-profiterole-6e2e54.netlify.app/',
     icon: 'QrCode',
+    path: 'qr-code',
     recentlyUpdated: true
   },
   {
@@ -16,14 +17,16 @@ export const tools: Tool[] = [
     description: 'Identify and manage duplicate prospects efficiently',
     url: 'https://super-souffle-b68dd7.netlify.app/',
     icon: 'Users',
+    path: 'duplicate-analyzer',
     featured: true
   },
   {
     id: '3',
     name: 'Sync Error Auditor',
     description: 'Audit and resolve synchronization errors',
-    url: 'https://meek-stroopwafel-46fcfe.netlify.app/',
+    url: 'https://euphonious-bavarois-d23bf1.netlify.app/',
     icon: 'AlertCircle',
+    path: 'sync-error',
     featured: true
   },
   {
@@ -32,6 +35,7 @@ export const tools: Tool[] = [
     description: 'Efficiently manage and track campaign members',
     url: 'https://phenomenal-douhua-468c53.netlify.app/',
     icon: 'BarChart',
+    path: 'campaign-manager',
     featured: true
   },
   {
@@ -40,6 +44,7 @@ export const tools: Tool[] = [
     description: 'Design and visualize customer journeys with ease',
     url: 'https://iridescent-cannoli-95802f.netlify.app/',
     icon: 'Map',
+    path: 'journey-hub',
     featured: true,
     recentlyUpdated: true
   }

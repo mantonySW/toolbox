@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import { Lock } from 'lucide-react';
+import { Lock, Mail } from 'lucide-react';
 
 interface AuthScreenProps {
-  onAuthenticate: (password: string) => void;
+  onAuthenticate: (email: string, password: string) => void;
   error?: string;
 }
 
 export const AuthScreen: React.FC<AuthScreenProps> = ({ onAuthenticate, error }) => {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onAuthenticate(password);
+    onAuthenticate(email, password);
   };
 
   return (
@@ -29,22 +30,39 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onAuthenticate, error })
             <Lock className="text-white" size={24} />
           </div>
           <h2 className="text-2xl font-bold text-gray-800">Welcome to SLX Toolbox™</h2>
-          <p className="text-gray-600 mt-2">Please enter your password to continue</p>
+          <p className="text-gray-600 mt-2">Please sign in to continue</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
+          <div className="relative">
+            <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+              <Mail className="h-5 w-5 text-gray-400" />
+            </div>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#001c39] focus:border-transparent transition-all outline-none"
+              placeholder="Email address"
+              autoFocus
+            />
+          </div>
+          <div className="relative">
+            <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+              <Lock className="h-5 w-5 text-gray-400" />
+            </div>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#001c39] focus:border-transparent transition-all outline-none"
-              placeholder="Enter password"
-              autoFocus
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#001c39] focus:border-transparent transition-all outline-none"
+              placeholder="Password"
             />
           </div>
           {error && (
-            <p className="text-red-500 text-sm">{error}</p>
+            <div className="bg-red-50 text-red-500 p-3 rounded-lg text-sm">
+              {error}
+            </div>
           )}
           <button
             type="submit"

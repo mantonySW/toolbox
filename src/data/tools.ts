@@ -1,5 +1,5 @@
 import { Tool } from '../types';
-import { QrCode, Users, AlertCircle, BarChart, Map } from 'lucide-react';
+import { QrCode, Users, AlertCircle, BarChart, Map, FileText, FileSpreadsheet } from 'lucide-react';
 
 export const tools: Tool[] = [
   {
@@ -15,7 +15,7 @@ export const tools: Tool[] = [
     id: '2',
     name: 'Duplicate Prospect Analyzer',
     description: 'Identify and manage duplicate prospects efficiently',
-    url: 'https://super-souffle-b68dd7.netlify.app/',
+    url: 'https://gregarious-cuchufli-7c17bc.netlify.app/',
     icon: 'Users',
     path: 'duplicate-analyzer',
     featured: true
@@ -45,6 +45,25 @@ export const tools: Tool[] = [
     url: 'https://iridescent-cannoli-95802f.netlify.app/',
     icon: 'Map',
     path: 'journey-hub',
+    recentlyUpdated: true
+  },
+  {
+    id: '6',
+    name: 'Add To Calendar Generator',
+    description: 'Create calendar event links for seamless meeting scheduling',
+    url: 'https://remarkable-kulfi-ebc561.netlify.app',
+    icon: 'FileText',
+    path: 'calendar-generator',
+    featured: true,
+    recentlyUpdated: true
+  },
+  {
+    id: '7',
+    name: 'Data Analyzer',
+    description: 'Upload your CSV or Excel file to analyze and group your data',
+    url: 'https://stirring-frangollo-0019ff.netlify.app/',
+    icon: 'FileSpreadsheet',
+    path: 'data-analyzer',
     featured: true,
     recentlyUpdated: true
   }

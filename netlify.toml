@@ -1,7 +1,11 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  base = "/"
+
+[[redirects]]
+  from = "/staccato2011/*"
+  to = "/staccato2011/index.html"
+  status = 200
 
 [[redirects]]
   from = "/*"

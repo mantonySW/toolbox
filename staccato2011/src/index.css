@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-staccato-smoke text-staccato-gray;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    @apply text-staccato-primary;
+  }
+
+  button {
+    @apply font-poppins;
+  }
+
+  /* Icon colors */
+  .lucide {
+    @apply text-staccato-primary;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-staccato-white rounded-xl shadow-sm;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-staccato-primary text-white hover:bg-opacity-90 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-staccato-accent text-white hover:bg-opacity-90 transition-colors;
+  }
+
+  /* Status indicators */
+  .status-active {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .status-pending {
+    @apply bg-staccato-alice text-staccato-primary;
+  }
+
+  /* Timeline styles */
+  .timeline-node {
+    @apply bg-staccato-primary text-white;
+  }
+
+  .timeline-node-completed {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .timeline-node-pending {
+    @apply bg-staccato-alice text-staccato-primary;
+  }
+
+  /* Metric cards */
+  .metric-card {
+    @apply bg-staccato-alice p-4 rounded-lg border-l-4 border-staccato-primary;
+  }
+}
